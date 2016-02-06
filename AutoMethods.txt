@@ -11,11 +11,11 @@ public class AutoMethods extends Robot{
 public static void moveForward(double distanceTillUp,double speed){
                 rightDriveEncoder.reset();
                 leftDriveEncoder.reset();
-                while(distanceTillUp > leftDriveEncoder.get() || distanceTillUp > rightDriveEncoder.get()){
+                while(distanceTillUp > leftDriveEncoder.get() || distanceTillUp < rightDriveEncoder.get()){
                         frontLeftMotor.set(speed);
-                        frontRightMotor.set(speed);
+                        frontRightMotor.set(-speed);
                         backLeftMotor.set(speed);
-                        backRightMotor.set(speed);
+                        backRightMotor.set(-speed);
                 }
                 frontLeftMotor.set(0);
                 frontRightMotor.set(0);
