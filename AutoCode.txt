@@ -67,6 +67,8 @@ public class Robot extends IterativeRobot {
                 System.out.println("Auto selected: " + autoSelected);
             AutoMethods.turnMove(shiftStartingPosition);
             AutoMethods.moveUp(distanceTillUp,1);
+            leftHookEncoder.reset();
+            rightHookEncoder.reset();
             if(barrierInfront == 1){
                     AutoMethods.crossDrawbridge();
             }else if(barrierInfront == 2){
